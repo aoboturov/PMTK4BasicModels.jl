@@ -2,7 +2,7 @@
 Univariate Gaussian distribution, pdf
 *** In the univariate case, Sigma is the variance, not the standard deviation! ***
 """
-function gaussProb{T<:Number}(X::AbstractArray{T,1}, mu::T, Sigma::T)
+function gaussProb{T<:Number,U<:Number,V<:Number}(X::AbstractArray{T,1}, mu::U, Sigma::V)
     return gaussProb(reshape(X, length(X), 1), [mu], reshape([Sigma], 1, 1))
 end
 
@@ -10,7 +10,7 @@ end
 Multivariate Gaussian distribution, pdf
 X(i,:) is i'th case
 """
-function gaussProb{T<:Number}(X::AbstractArray{T,2}, mu::AbstractArray{T,1}, Sigma::AbstractArray{T,2})
+function gaussProb{T<:Number,U<:Number,V<:Number}(X::AbstractArray{T,2}, mu::AbstractArray{U,1}, Sigma::AbstractArray{V,2})
     @assert size(Sigma, 1)==size(Sigma, 2) string("Sigma should be a square matrix, but is a ", size(Sigma, 1), "x", size(Sigma, 2), " matrix")
     d = size(Sigma, 2)
 
