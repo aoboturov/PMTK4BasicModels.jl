@@ -1,5 +1,8 @@
 module PMTK4BasicModels
 
-# package code goes here
+    export gaussProb
 
-end # module
+    include("gauss/sub/gaussProb.jl")
+
+end
+
