@@ -1,9 +1,8 @@
 module PMTK4BasicModels
 
-    export gammaLogprob
-    include("gamma/gammaLogprob.jl")
-    export gaussProb
-    include("gauss/sub/gaussProb.jl")
+    include("gamma/gamma.jl")
+    export normpdf
+    include("norm/norm.jl")
     export contingencyTableUnpairedDiffPostMc
     include("sub/contingencyTableUnpairedDiffPostMc.jl")
 
